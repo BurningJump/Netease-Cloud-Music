@@ -34,7 +34,9 @@
 
   export default {
     name: 'landing-page',
-    components: { SystemInformation },
+    components: {
+      SystemInformation
+    },
     methods: {
       open(link) {
         this.$electron.shell.openExternal(link);
