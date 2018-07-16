@@ -1,11 +1,11 @@
 <template>
-  <div class="main">
+  <div class="main-block">
     
   </div>
 </template>
 <script>
   export default {
-    name: 'main',
+    name: 'main-block',
     components: {},
     methods: {
       open(link) {
@@ -15,11 +15,12 @@
   };
 </script>
 <style lang="scss">
-.main {
+.main-block {
   position: absolute;
   top: 60px;
   bottom: 60px;
   right: 0;
+  left: 250px;
   width: 100%;
   background-color: rgb(250, 250, 250);
 }
