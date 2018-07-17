@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import axios from 'axios';
 import VueBus from 'vue-bus';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 import App from './App';
 import router from './router';
@@ -12,7 +14,7 @@ Vue.config.productionTip = false;
 
 // 全局事件中心
 Vue.use(VueBus);
-
+Vue.use(ElementUI);
 /* eslint-disable no-new */
 new Vue({
   components: { App },
