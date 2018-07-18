@@ -53,6 +53,14 @@
         <span>{{playlist.name}}</span>
       </li>
     </ul>
+    <ul class="collection-list">
+      <li>收藏的歌单</li>
+      <li v-for="collectionList in collectionLists">
+        <i class="icon playlist"></i>
+        <span>{{collectionList.name}}</span>
+      </li>
+    </ul>
+    <div class="current-song"></div>
   </div>
 </template>
 <script>
@@ -73,6 +81,35 @@
           {
             name: '纯音乐'
           }
+        ],
+        collectionLists: [
+          {
+            name: '为听他的配乐才去看电影'
+          },
+          {
+            name: '【骨灰级】程序员变成必备音乐'
+          },
+          {
+            name: '头文字D中那些爆燃的BGM'
+          },
+          {
+            name: '源自纪录片的伤感曲调'
+          },
+          {
+            name: '爱尔兰哨笛'
+          },
+          {
+            name: '万次评论只为这个旋律'
+          },
+          {
+            name: '华语优质女声|感动不用歇斯底里'
+          },
+          {
+            name: '两百位日本配乐作曲家，每人一首良曲'
+          },
+          {
+            name: '冷门华语集，你未发现的好歌。'
+          }
         ]
       };
     },
@@ -92,6 +129,7 @@
   left: 0;
   width: 250px;
   background-color: rgb(245, 245, 247);
+  overflow: auto;
   ul {
     width: 100%;
     li:first-child {
@@ -119,6 +157,14 @@
       background-color: rgb(230, 231, 234 );
       border-left: 3px solid rgb(198, 47, 47);
     }
+  }
+  .current-song {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: olivedrab;
   }
 }
 </style>
