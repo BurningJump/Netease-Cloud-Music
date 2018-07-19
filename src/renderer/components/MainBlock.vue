@@ -2,15 +2,43 @@
   <div class="main-block">
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="个性推荐" name="recommend">
-        <el-carousel type="card" indicator-position="outside" arrow="hover">
+        <el-carousel type="card" indicator-position="outside" arrow="hover" height="250px" :autoplay="false">
           <el-carousel-item v-for="item in 8" :key="item">
             <h3>{{ item }}</h3>
           </el-carousel-item>
         </el-carousel>
+        <section class="recommend">
+          <div class="subtitle">
+            <span>推荐歌单</span>
+            <a href="">更多<i class="el-icon-arrow-right"></i></a>
+          </div>
+          <ul>
+            <li class="card">
+              <div class="time cover">
+                <span class="day">{{day}}</span>
+                <span class="date"></span>
+              </div>
+              <p class="title">每日歌曲推荐</p>
+            </li>
+            <li class="card" v-for="list in recommendLists">
+              <div class="cover">
+                <img :src="list.thumb" alt="">
+                <div class="play-times">
+                  <i class="icon listen"></i>
+                  <span>{{list.times}}</span>
+                </div>
+                <span class="play-btn">
+                  <i class="icon play"></i>
+                </span>
+              </div>
+              <p class="title">{{list.title}}</p>
+            </li>
+          </ul>
+        </section>
       </el-tab-pane>
       <el-tab-pane label="歌单" name="list">歌单</el-tab-pane>
       <el-tab-pane label="主播电台" name="radio">
-        <el-carousel type="card" indicator-position="outside" arrow="hover">
+        <el-carousel type="card" indicator-position="outside" arrow="hover" height="250px" :autoplay="false">
           <el-carousel-item v-for="item in 5" :key="item">
             <h3>{{ item }}</h3>
           </el-carousel-item>
@@ -27,7 +55,54 @@
     name: 'main-block',
     data() {
       return {
-        activeName: 'recommend'
+        activeName: 'recommend',
+        recommendLists: [
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          },
+          {
+            times: '31万',
+            thumb: 'www.baidu.com',
+            title: '『古风田园』云烟皆过，归往竹林深处'
+          },
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          },
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          },
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          },
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          },
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          },
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          },
+          {
+            times: '102万',
+            thumb: 'www.baidu.com',
+            title: '城市季候|跟我逃离或是大梦一场'
+          }
+        ]
       };
     },
     components: {},
@@ -65,5 +140,22 @@
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
+
+  section {}
+  .recommand {}
+    .subtitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgb(225, 225, 226);
+      span {
+        font-size: 20px;
+      }
+      a {
+        font-size: 14px;
+        color: rgb(102, 102, 102);
+        text-decoration: none;
+      }
+    }
 }
 </style>
