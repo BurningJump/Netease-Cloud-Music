@@ -141,8 +141,32 @@
     background-color: #d3dce6;
   }
 
-  section {}
-  .recommand {}
+  section {
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      li {}
+      .card {
+        .cover {
+          width: 170px;
+          height: 170px;
+          border: 1px solid rgb(225, 225, 226);
+          background-color: #ccc;
+        }
+        .time {
+          background-color: #fff;
+          .day {}
+          .date {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
+  .recommend {}
     .subtitle {
       display: flex;
       justify-content: space-between;
@@ -157,5 +181,6 @@
         text-decoration: none;
       }
     }
+
 }
 </style>
