@@ -45,9 +45,9 @@
 .main-block {
   position: absolute;
   top: 60px;
-  bottom: 60px;
+  bottom: 61px;
   right: 0;
-  left: 250px;
+  left: 251px;
   width: 100%;
   background-color: rgb(250, 250, 250);
   .el-carousel__item h3 {

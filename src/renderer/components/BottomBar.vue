@@ -72,6 +72,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid rgb(225, 225, 226);
   .left-btns {
     display: inline-flex;
     align-items: center;
