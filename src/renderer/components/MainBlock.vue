@@ -16,7 +16,7 @@
             <li class="card">
               <div class="time cover">
                 <span class="day">{{day}}</span>
-                <span class="date"></span>
+                <span class="date">{{date}}</span>
               </div>
               <p class="title">每日歌曲推荐</p>
             </li>
@@ -102,7 +102,9 @@
             thumb: 'www.baidu.com',
             title: '城市季候|跟我逃离或是大梦一场'
           }
-        ]
+        ],
+        day: '星期六',
+        date: '21'
       };
     },
     components: {},

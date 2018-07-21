@@ -48,6 +48,7 @@
     </ul>
     <div class="collapse-list" @click="showCreatedList=!showCreatedList">
       <span>创建的歌单</span>
+      <span class="add">+</span>
       <i class="el-icon-arrow-down" v-show="showCreatedList"></i>
       <i class="el-icon-arrow-right" v-show="!showCreatedList"></i>
     </div>
@@ -208,6 +209,22 @@
     height: 50px;
     span {
       margin-left: 12px;
+    }
+    .add {
+      margin: 0;
+      width: 20px;
+      height: 20px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ccc;
+      border-radius: 50%;
+      &:hover {
+        background-color: #000;
+      }
     }
     i {
       margin-right: 12px;
