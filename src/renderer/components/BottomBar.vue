@@ -63,7 +63,8 @@
 </script>
 <style lang="scss">
 .bottom-bar {
-  position: absolute;
+  position: fixed;
+  z-index: 2;
   bottom: 0;
   left: 0;
   width: 100%;
