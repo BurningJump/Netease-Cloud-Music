@@ -25,6 +25,7 @@
       <i class="icon close"></i>
     </div>
     <div class="msgbox" v-show="showMsgBox">
+      <div class="top-arrow"></div>
       <i class="icon close">×</i>
       <el-tabs v-model="activeTab" type="card" @tab-click="handleClick">
         <el-tab-pane label="私信" name="letter">
@@ -125,7 +126,7 @@
           }
         ],
         viameList: [],
-        notificationList:[]
+        notificationList: []
       };
     },
     components: {},
@@ -228,6 +229,34 @@
     height: 800px;
     background-color: #fff;
     box-shadow: -2px 2px 0 #ccc;
+    .top-arrow {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      top: -10px;
+      left: 50%;
+      margin-bottom: 3px;
+      border-width: 11px;
+      border-top-width: 0;
+      border-bottom-color:#fff;
+      &::after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        right: -11px;
+        top: -12px;
+        margin-left: -5px;
+        border-top-width: 0;
+        border-bottom-color:#fff;
+        border-width: 11px;
+      }
+    }
     .close {
       width: 20px;
       height: 20px;
