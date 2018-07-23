@@ -15,7 +15,7 @@
     </div>
     <div class="icons">
       <i class="icon theme"></i>
-      <i class="icon email" @click="openMsgBox"></i>
+      <i class="icon email" @click="showMsgBox=!showMsgBox"></i>
       <i class="icon setting"></i>
     </div>
     <div class="handle">
@@ -26,10 +26,10 @@
     </div>
     <div class="msgbox" v-show="showMsgBox">
       <div class="top-arrow"></div>
-      <i class="icon close">×</i>
+      <i class="icon close" @click="showMsgBox=false">×</i>
       <el-tabs v-model="activeTab" type="card" @tab-click="handleClick">
         <el-tab-pane label="私信" name="letter">
-          <div class="no-letter" v-if="letterList.length===0">暂无私信内容</div>
+          <div class="no-msg" v-if="letterList.length===0">暂无私信内容</div>
           <li v-if="letterList.length!==0" class="letter-list" v-for="letter in letterList">
             <i class="icon reddot"></i>
             <img :src="letter.headThumb" alt="">
@@ -43,7 +43,7 @@
           </li>
         </el-tab-pane>
         <el-tab-pane label="评论" name="comment">
-          <div class="no-comment" v-if="commentList.length===0">暂无评论内容</div>
+          <div class="no-msg" v-if="commentList.length===0">暂无评论内容</div>
           <li v-if="commentList.length!==0" class="comment-list" v-for="comment in commentList">
             <img :src="comment.headThumb" alt="">
             <div class="user-time">
@@ -51,12 +51,12 @@
               <span class="time">{{comment.time}}</span>
             </div>
             <p>回复我：{{comment.msg}}</p>
-            <div class="my-comment">我的评论：{{comment.myComment}}</div>
+            <div class="my-msg">我的评论：{{comment.myComment}}</div>
             <span class="reply"><i class="icon dialog"></i>回复</span>
           </li>
         </el-tab-pane>
         <el-tab-pane label="@我" name="viame">
-          <div class="no-viame" v-if="viameList.length===0">暂无@我的内容</div>
+          <div class="no-msg" v-if="viameList.length===0">暂无@我的内容</div>
           <li v-if="viameList.length!==0" class="viame-list"></li>
         </el-tab-pane>
         <el-tab-pane label="通知" name="notification">
@@ -133,8 +133,7 @@
     methods: {
       open(link) {
         this.$electron.shell.openExternal(link);
-      },
-      openMsgBox() {}
+      }
     }
   };
 </script>
@@ -262,6 +261,11 @@
       height: 20px;
       background-color: #fff;
       font-size: 18px;
+    }
+    .no-msg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .letter-list {
       list-style: none;
